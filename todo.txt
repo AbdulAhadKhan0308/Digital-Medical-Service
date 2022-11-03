@@ -1,0 +1,112 @@
+//TO DO:
+      //coords to come from google's api as it is more accurate
+//TO DO:
+//person marker's color be different from store
+//person marker is live location (60s update)
+
+src change to client-src
+
+there are no useful npms to upload csv files to mongodb atlas
+so needed to install the tools separately for windows, cd to the bin folder containing the mongoimport binary, (no PATH env. variable changes have been done), and run from there this command:
+
+CONNECTION uri
+--------------
+mongodb+srv://user0:<password>@cluster0.iwxwkhb.mongodb.net/?retryWrites=true&w=majority
+
+WORKS
+-----
+mongoimport --uri mongodb+srv://user0:1234@cluster0.iwxwkhb.mongodb.net/medicinedb --collection medicineCol2 --type "csv" --headerline --file "C:\Users\ABDUL AHAD KHAN\Downloads\major\medicines_database2.csv"
+
+SEARCH AGGREGATE JSON (runs in 3 ppelined stages: search, limit, project):
+--------------------------------------------------------------
+WORKS
+-----
+
+JSON search in atlas online tool wroks with these:
+[
+  {
+    "$search": {
+      "index": "name",
+      "text": {
+        "query": "Azithral 500 Tablet",
+        "path": "Medicine Name"
+      }
+    }
+  }
+]
+
+
+[
+  {
+    "$search": {
+      "index": "name",
+      "regex": {
+        "path": "Medicine Name",
+        "query": "(.*)a(.*)"
+      }
+    }
+  }
+]
+
+this is json used to create an index of the type case insensitive keyword. It means the entire field (here, Medicine Name) will be taken as one and lowercased.
+
+{
+  "mappings": {
+    "fields": {
+      "Medicine Name": {
+        "type": "string",
+        "analyzer": "keyword_lowercaser"
+      }
+    }
+  },
+  "analyzers": [
+    {
+      "charFilters": [],
+      "name": "keyword_lowercaser",
+      "tokenFilters": [
+        {
+          "type": "lowercase"
+        }
+      ],
+      "tokenizer": {
+        "type": "keyword"
+      }
+    }
+  ]
+}
+
+For performing search on lowercased keyword type index we just need to set allowAnalyzedField:true. Now we have a case insensitive regex matching on the above index.
+[
+  {
+    "$search": {
+      "index": "medicine",
+      "regex": {
+        "path": "Medicine Name",
+        "allowAnalyzedField":true,
+        "query": "(.*)AUGMEN(.*)"
+      }
+    }
+  }
+]
+--------------------------------------------------------------
+
+WORKS
+-----
+
+[
+  {
+    "$search": {
+      "index": "fuzzy",
+      "text": {
+        "path": "Medicine Name",
+        "query": "Augmentin 625 Duo Tablet",
+        "fuzzy": {
+          "maxEdits":2,
+          "maxExpansions":60
+        }
+      }
+    }
+  }
+]
+--------------------------------------------------------------
+http://192.168.43.247/search?illness=0&fuzzy=0&searchTerm=a

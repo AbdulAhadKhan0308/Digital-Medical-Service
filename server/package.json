@@ -1,0 +1,15 @@
+{
+  "name": "medicserver",
+  "version": "1.0.0",
+  "description": "server-side of medicapp",
+  "main": "webServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdul Ahad Khan",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.11.0"
+  }
+}

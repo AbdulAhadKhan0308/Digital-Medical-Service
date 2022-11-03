@@ -1,0 +1,6 @@
+server
+------
+node ./src/medicineSearch.js
+
+client
+------
