@@ -3,8 +3,9 @@
 //TO DO:
 //person marker's color be different from store
 //person marker is live location (60s update)
-
-src change to client-src
+//TO DO:
+//regex (regex specification for mongodb) is required in medicineSearch and illnessSearch,
+//just remove all punctuations for these 2 searches on client
 
 there are no useful npms to upload csv files to mongodb atlas
 so needed to install the tools separately for windows, cd to the bin folder containing the mongoimport binary, (no PATH env. variable changes have been done), and run from there this command:
@@ -110,3 +111,15 @@ WORKS
 ]
 --------------------------------------------------------------
 http://192.168.43.247/search?illness=0&fuzzy=0&searchTerm=a
+
+http://192.168.43.247/search?illness=1&fuzzy=0&searchTerm=fungal infection
+http://192.168.43.247/search?illness=1&fuzzy=0&searchTerm=beta " .
+http://192.168.43.247/search?illness=1&fuzzy=0&searchTerm=stomach
+
+http://192.168.43.247/search?illness=0&fuzzy=1&searchTerm=apirn table
+http://192.168.43.247/search?illness=0&fuzzy=1&searchTerm=betadi " .
+http://192.168.43.247/search?illness=0&fuzzy=1&searchTerm=disperzym
+
+http://192.168.43.247/search?illness=1&fuzzy=1&searchTerm="bacteral"
+http://192.168.43.247/search?illness=1&fuzzy=1&searchTerm="strk"
+-----------------------------------------------------------

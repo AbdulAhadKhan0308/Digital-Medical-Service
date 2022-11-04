@@ -1,5 +1,8 @@
 const express = require("express");
 const { medicineSearch } = require("./medicineSearch.js");
+const { illnessSearch } = require("./illnessSearch.js");
+const { medicineFuzzySearch } = require("./medicineFuzzySearch.js");
+const { illnessFuzzySearch } = require("./illnessFuzzySearch.js");
 const app = express();
 
 //3030 is for trojans and obsolete protocol, so can be used
@@ -18,7 +21,10 @@ app.get("/", (req, res) => {
 });
 
 //bulid response
-//const buildResponse = function (jsonObj) {};
+const buildAndSendResponse = function (res, stat, result) {
+  res.write(JSON.stringify({ stat: stat, result: result }));
+  res.end();
+};
 
 //middleware
 app.use((req, res, next) => {
@@ -29,7 +35,7 @@ app.use((req, res, next) => {
 });
 
 //search queries
-app.get("/search", async (req, res) => {
+app.get("/search", (req, res) => {
   const illness = parseInt(req.query.illness);
   const fuzzy = parseInt(req.query.fuzzy);
   const searchTerm = req.query.searchTerm;
@@ -43,12 +49,56 @@ app.get("/search", async (req, res) => {
     searchTerm !== ""
   ) {
     if (illness === 0 && fuzzy === 0) {
-      const ansArray = await medicineSearch(searchTerm);
-      res.write(JSON.stringify({ stat: "SUCCESS", result: ansArray }));
-      res.end();
+      medicineSearch(searchTerm)
+        .then((ansArray) => buildAndSendResponse(res, "SUCCESS", ansArray))
+        .catch((err) => {
+          console.log("err");
+          console.dir(err);
+          buildAndSendResponse(
+            res,
+            "SUCCESS",
+            "UNCAUGHT/THROWN EXCEPTION IN medicineSearch"
+          );
+        });
+    } else if (illness === 1 && fuzzy === 0) {
+      illnessSearch(searchTerm)
+        .then((ansArray) => buildAndSendResponse(res, "SUCCESS", ansArray))
+        .catch((err) => {
+          console.log("err");
+          console.dir(err);
+          buildAndSendResponse(
+            res,
+            "SUCCESS",
+            "UNCAUGHT/THROWN EXCEPTION IN illnessSearch"
+          );
+        });
+    } else if (illness === 0 && fuzzy === 1) {
+      medicineFuzzySearch(searchTerm)
+        .then((ansArray) => buildAndSendResponse(res, "SUCCESS", ansArray))
+        .catch((err) => {
+          console.log("err");
+          console.dir(err);
+          buildAndSendResponse(
+            res,
+            "SUCCESS",
+            "UNCAUGHT/THROWN EXCEPTION IN medicineFuzzySearch"
+          );
+        });
+    } else {
+      illnessFuzzySearch(searchTerm)
+        .then((ansArray) => buildAndSendResponse(res, "SUCCESS", ansArray))
+        .catch((err) => {
+          console.log("err");
+          console.dir(err);
+          buildAndSendResponse(
+            res,
+            "SUCCESS",
+            "UNCAUGHT/THROWN EXCEPTION IN illnessFuzzySearch"
+          );
+        });
     }
   } else {
-    res.write(JSON.stringify({ name: "FAILURE" }));
+    res.write(JSON.stringify({ name: "QUERY FAILURE" }));
     res.end();
   }
 });
