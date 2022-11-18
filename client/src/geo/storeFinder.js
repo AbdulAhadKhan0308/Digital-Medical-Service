@@ -30,7 +30,7 @@ function geolocate() {
         //   latitude,
         //   longitude
         // );
-        // personMarker.attachToMapCoords([latitude, longitude]);
+        // personMarker.attachToMapCoords([latitude, longitude]);;
 
         //mark stores on map
       },
