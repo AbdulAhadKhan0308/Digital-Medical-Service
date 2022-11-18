@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/geo/storeFinder.js",
+  entry: "./src/controller.js",
   module: {
     rules: [
       {
@@ -33,7 +33,7 @@ module.exports = {
       "node_modules",
     ],
     //priority left to right
-    extensions: [".ts", ".js", ".css"],
+    extensions: [".ts", ".js"],
   },
   devtool: "cheap-module-source-map",
   //devtool: false,

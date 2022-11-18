@@ -2,14 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Medic</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<link rel="shortcut icon" type="image/png" href="/icon.png" />-->
+
+    <!--<link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />-->
+
     <link rel="stylesheet" href="leaflet.css" />
+    <title>medicapp</title>
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div id="map" style="width: 600px; height: 400px"></div>
-    <button>Locate Medical Stores Near Me</button>
+    <!-- TOP NAV -->
+    <nav class="main-nav">
+      <a class="main-nav__entry" href="#feature--0">About</a>
+      <a class="main-nav__entry" href="#feature--1">Search meds</a>
+      <a class="main-nav__entry" href="#feature--2">Locate medical stores</a>
+      <a class="main-nav__entry" href="#feature--3">Book appointments</a>
+    </nav>
+    <div class="user-info">
+      <div class="login">
+        <p>Log in to access account</p>
+
+        <form class="login__form">
+          <input
+            type="text"
+            placeholder="username"
+            class="login__input login__input--user"
+          />
+
+          <input
+            type="text"
+            placeholder="password"
+            maxlength="4"
+            class="login__input login__input--pin"
+          />
+          <button class="login__btn">Login/</button>
+          <button class="logout__btn">Logout</button>
+        </form>
+        <div class="signup">
+          <p>Don't have an account yet? Create one now!</p>
+          <button class="open-acc-btn">Open account</button>
+        </div>
+      </div>
+    </div>
+    <div class="about-medicapp">
+      <div class="about-medicapp__main">
+        <p class="">
+          Medicine search, consultations, appointments and more, all through
+          this modern web application
+        </p>
+        <h4 class="about-bank__label">Learn More &darr;</h4>
+      </div>
+
+      <div class="about-medicapp__more-info">
+        <h2>Features</h2>
+        <section class="section" id="section--1">
+          <h3 class="section__header section--1__header">Search medicines</h3>
+          <p>
+            Choose from 700+ OTC and prescription drugs. Get to know their side
+            effects, prices, alternatives and more!
+          </p>
+        </section>
+        <section class="section" id="section--2">
+          <h3 class="section__header section--2__header">
+            Locate medical stores
+          </h3>
+          <p>
+            We find medical stores for you so that you get the choice making
+            your purchase easy, simple, and affordable!
+          </p>
+        </section>
+        <section class="section" id="section--3">
+          <h3 class="section__header section--3__header">Book appointments</h3>
+          <p>
+            Hassle-free and state of the art auto booking system, our commitment
+            to efficiency and transparency helps save lives.
+          </p>
+        </section>
+      </div>
+    </div>
+    <div class="geo-medicapp" id="feature--2">
+      <h2>Look for medical stores around you</h2>
+      <div id="map" style="width: 600px; height: 400px"></div>
+      <button class="geo-medicapp__btn">Find medical stores</button>
+    </div>
   </body>
 </html>

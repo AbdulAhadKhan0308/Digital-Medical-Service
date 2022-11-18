@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run filefolderchange && webpack --config webpack.config.js",
-    "filefolderchange": "rm -rf dist && mkdir dist && cp html/index.html dist/index.html && cp css/a.css dist/a.css && cp node_modules/leaflet/dist/leaflet.css dist/leaflet.css"
+    "filefolderchange": "rm -rf dist && mkdir dist && cp html/index.html dist/index.html && cp -a css/. dist/ && cp node_modules/leaflet/dist/leaflet.css dist/leaflet.css"
   },
   "author": "AbdulAhadKhan",
   "license": "GPL-3.0",
