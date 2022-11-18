@@ -5,7 +5,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 //regex can work without indices, but with index on db it will be faster
 
-// a thing about async functions in javascript
+//async functions in javascript
 //they will return promises, which:
 //reject only on thrown exception or uncaught exception inside the async function
 //else resolve

@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const { medicineSearch } = require("./medicineSearch.js");
 const { illnessSearch } = require("./illnessSearch.js");
@@ -16,10 +17,6 @@ const hostname = "127.0.0.1";
 const port2 = 80; //http;
 const hostname2 = "192.168.43.247";
 
-app.get("/", (req, res) => {
-  res.send("medicserver");
-});
-
 //bulid response
 const buildAndSendResponse = function (res, stat, result) {
   res.write(JSON.stringify({ stat: stat, result: result }));
@@ -32,6 +29,15 @@ app.use((req, res, next) => {
   res.append("Access-Control-Allow-Methods", "GET");
   res.append("Access-Control-Allow-Headers", "Content-Type");
   next();
+});
+
+//send html, css, js
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "public", "a.css"));
+  res.sendFile(path.join(__dirname, "..", "public", "leaflet.css"));
+  res.sendFile(path.join(__dirname, "..", "public", "script.js"));
+  res.sendFile(path.join(__dirname, "..", "public", "script.js.map"));
 });
 
 //search queries
