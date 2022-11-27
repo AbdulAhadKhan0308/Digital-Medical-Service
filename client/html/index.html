@@ -21,41 +21,17 @@
       <a class="main-nav__entry" href="#feature--0">About</a>
       <a class="main-nav__entry" href="#feature--1">Search meds</a>
       <a class="main-nav__entry" href="#feature--2">Locate medical stores</a>
-      <a class="main-nav__entry" href="#feature--3">Book appointments</a>
+      <a class="main-nav__entry" href="#feature--3">Heart Health Predictor</a>
     </nav>
-    <div class="user-info">
-      <div class="login">
-        <p>Log in to access account</p>
-
-        <form class="login__form">
-          <input
-            type="text"
-            placeholder="username"
-            class="login__input login__input--user"
-          />
-
-          <input
-            type="text"
-            placeholder="password"
-            maxlength="4"
-            class="login__input login__input--pin"
-          />
-          <button class="login__btn">Login/</button>
-          <button class="logout__btn">Logout</button>
-        </form>
-        <div class="signup">
-          <p>Don't have an account yet? Create one now!</p>
-          <button class="open-acc-btn">Open account</button>
-        </div>
-      </div>
-    </div>
+    <br />
+    <div class="user-info"></div>
     <div class="about-medicapp">
       <div class="about-medicapp__main">
         <p class="">
           Medicine search, consultations, appointments and more, all through
           this modern web application
         </p>
-        <h4 class="about-bank__label">Learn More &darr;</h4>
+        <h4 class="about-medicapp__label">Learn More &darr;</h4>
       </div>
 
       <div class="about-medicapp__more-info">
@@ -77,18 +53,61 @@
           </p>
         </section>
         <section class="section" id="section--3">
-          <h3 class="section__header section--3__header">Book appointments</h3>
+          <h3 class="section__header section--3__header">
+            Heart Health Predictor
+          </h3>
           <p>
-            Hassle-free and state of the art auto booking system, our commitment
-            to efficiency and transparency helps save lives.
+            A tool for doctors and patients to be used in machine-assisted
+            medical diagnosis. It enables significant knowledge, that is,
+            relationships between ECGs and heart disease to be established
           </p>
         </section>
       </div>
+    </div>
+    <div class="search-medicapp" id="feature--1">
+      <h2>Search for prescription and OTC medicines</h2>
+      <p>Search for medicines by name or by symptoms name:</p>
+
+      <form class="heart-health__form">
+        <input
+          type="text"
+          placeholder="Medicine/disease/symptom"
+          class="heart-health__form__input"
+        /><br /><br />
+        <input type="checkbox" id="symptom" />
+        <label> Check this, if you want to search by disease/symptom</label
+        ><br />
+        <input type="checkbox" id="fuzzy" />
+        <label
+          >Check this, if you don't know the medicine/symptom name
+          assuredly</label
+        ><br /><br />
+        <button class="heart-health__form__btn">Get Results</button>
+      </form>
+      <br />
+      <div class="search-medicapp__result"></div>
     </div>
     <div class="geo-medicapp" id="feature--2">
       <h2>Look for medical stores around you</h2>
       <div id="map" style="width: 600px; height: 400px"></div>
       <button class="geo-medicapp__btn">Find medical stores</button>
+    </div>
+    <div class="heart-health" id="feature--3">
+      <h2>Predict your heart health using ECG analyzer</h2>
+      <p>
+        From among the set of example ECGs (in the form of data points
+        corresponding to a heartbeat) select and analyze the heart's condition.
+      </p>
+
+      <form class="heart-health__form">
+        <input
+          type="text"
+          placeholder="Enter report number"
+          class="heart-health__form__input"
+        />
+        <button class="heart-health__form__btn">Get Prediction</button>
+      </form>
+      <div class="heart-health__result"></div>
     </div>
   </body>
 </html>

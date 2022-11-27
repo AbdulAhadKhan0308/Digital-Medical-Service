@@ -25,7 +25,7 @@ const buildAndSendResponse = function (res, stat, result) {
 
 //middleware
 app.use((req, res, next) => {
-  //res.append("Access-Control-Allow-Origin", ["*"]);
+  res.append("Access-Control-Allow-Origin", ["*"]);
   res.append("Access-Control-Allow-Methods", "GET");
   res.append("Access-Control-Allow-Headers", "Content-Type");
   next();
@@ -40,6 +40,8 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "public", "script.js.map"));
 });
 
+//need to be logged in on MongoDB Atlas to run any
+//of these search features
 //search queries
 app.get("/search", (req, res) => {
   const illness = parseInt(req.query.illness);
@@ -104,12 +106,12 @@ app.get("/search", (req, res) => {
         });
     }
   } else {
-    res.write(JSON.stringify({ name: "QUERY FAILURE" }));
+    res.write(JSON.stringify({ stat: "QUERY FAILURE" }));
     res.end();
   }
 });
 
-const server = app.listen(port2, hostname2, function () {
+const server = app.listen(port2, hostname, function () {
   const host = server.address().address;
   const port = server.address().port;
   console.log("running at http://" + host + ":" + port);
