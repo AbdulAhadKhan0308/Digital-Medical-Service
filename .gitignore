@@ -4,3 +4,5 @@
 /server/node_modules/*
 /server/public/*
 /server/model-server/__pycache__/*
+/server/model-server/plt.png
+/server/model-server/mitbih_test_small.csv

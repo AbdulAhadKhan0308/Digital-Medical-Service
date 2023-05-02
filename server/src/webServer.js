@@ -31,14 +31,14 @@ app.use((req, res, next) => {
   next();
 });
 
-//send html, css, js
-//BREAKS
+// Serve static files from the "public" directory
+// first, html is sent from "/" path,
+// paths present in html generate new https requests
+// they are served from here
+app.use("/", express.static("../public"));
+
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
-  res.sendFile(path.join(__dirname, "..", "public", "a.css"));
-  res.sendFile(path.join(__dirname, "..", "public", "leaflet.css"));
-  res.sendFile(path.join(__dirname, "..", "public", "script.js"));
-  res.sendFile(path.join(__dirname, "..", "public", "script.js.map"));
 });
 
 //need to be logged in on MongoDB Atlas to run any

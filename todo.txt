@@ -1,9 +1,4 @@
 //TO DO:
-      //coords to come from google's api as it is more accurate
-//TO DO:
-//person marker's color be different from store
-//person marker is live location (60s update)
-//TO DO:
 //regex (regex specification for mongodb) is required in medicineSearch and illnessSearch,
 //just remove all punctuations for these 2 searches on client
 //TO DO:
@@ -23,12 +18,12 @@ WORKS
 -----
 mongoimport --uri mongodb+srv://user0:1234@cluster0.iwxwkhb.mongodb.net/medicinedb --collection medicineCol2 --type "csv" --headerline --file "C:\Users\ABDUL AHAD KHAN\Downloads\major\medicines_database2.csv"
 
-SEARCH AGGREGATE JSON (runs in 3 ppelined stages: search, limit, project):
+SEARCH AGGREGATE JSON (runs in 3 pipelined stages: search, limit, project):
 --------------------------------------------------------------
 WORKS
 -----
 
-JSON search in atlas online tool wroks with these:
+JSON search in atlas online tool works with these:
 [
   {
     "$search": {
