@@ -6,6 +6,11 @@
 //TO DO:
 //regex (regex specification for mongodb) is required in medicineSearch and illnessSearch,
 //just remove all punctuations for these 2 searches on client
+//TO DO:
+MongoDB logged in to send receive query
+simple / path breaks in express
+//TO DO:
+Python Env variable not recognized by VSCode
 
 there are no useful npms to upload csv files to mongodb atlas
 so needed to install the tools separately for windows, cd to the bin folder containing the mongoimport binary, (no PATH env. variable changes have been done), and run from there this command:

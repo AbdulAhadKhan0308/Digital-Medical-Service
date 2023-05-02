@@ -1,7 +1,6 @@
 import json
 import os
 import sys
-import threading
 from ecg_report import ecg_report
 from ecg_prediction import ecg_prediction
 from flask import Flask,jsonify,request,send_file
@@ -43,12 +42,6 @@ def return_ecg_prediction():
 def return_ecg_report():
   report_number = int(request.args.get('repno'))
   
-  print("Threads")
-  print(threading.enumerate())
-  print("Current Thread")
-  print(threading.get_ident())
-  print("INPUT QUERY ARG")
-  print("report_number",report_number);
   print("INPUT QUERY ARG")
   print("report_number",report_number);
 

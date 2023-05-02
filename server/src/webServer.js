@@ -32,6 +32,7 @@ app.use((req, res, next) => {
 });
 
 //send html, css, js
+//BREAKS
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
   res.sendFile(path.join(__dirname, "..", "public", "a.css"));
