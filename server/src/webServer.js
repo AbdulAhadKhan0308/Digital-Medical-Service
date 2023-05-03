@@ -41,8 +41,8 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
-//need to be logged in on MongoDB Atlas to run any
-//of these search features
+//MongoDB Atlas cluster needs to be not paused
+//for these features to work
 //search queries
 app.get("/search", (req, res) => {
   const illness = parseInt(req.query.illness);

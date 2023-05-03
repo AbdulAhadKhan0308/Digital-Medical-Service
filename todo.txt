@@ -139,3 +139,5 @@ export PATH=/c/"Program Files"/Python311/Scripts/:/c/"Program Files"/Python311/:
 or you can do for python38
 export PATH=/c/"Program Files"/Python38/Scripts/:/c/"Program Files"/Python38/:$PATH
 --------------------------------------------------------------
+Example Url for wrong report_number repno=123
+http://127.0.0.1:5000/ecg/?repno=123

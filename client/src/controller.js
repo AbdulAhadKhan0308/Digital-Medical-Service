@@ -81,7 +81,7 @@ locateMedicalStoresBtn.addEventListener("click", () => {
 
 const renderPrediction = function (stat, element, data) {
   if (stat === 0) {
-    html =
+    const html =
       "<h3>Prediction Result</h3><div>Something went wrong. Please try again.</div>";
 
     element.insertAdjacentHTML("afterbegin", html);

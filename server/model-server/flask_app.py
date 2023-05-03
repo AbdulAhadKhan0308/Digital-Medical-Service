@@ -8,11 +8,10 @@ from flask_cors import CORS
 
 
 #this line output goes in server logs
-print("SYS.PATH")
+#but not in the current local env
+print("sys.path")
 print(sys.path)
-print("CORS")
-print(CORS)
-print("OS.GETCWD()")
+print("os.getcwd()")
 print(os.getcwd())
 
 #flask run by default at port 5000
@@ -29,8 +28,11 @@ def default():
 #route for ecg input file number, returns prediction
 @app.route("/ecg/",methods=['GET'])
 def return_ecg_prediction():
+  print("return_ecg_prediction")
   report_number = int(request.args.get('repno'))
-
+  
+  print("report_number")
+  print(report_number)
   if report_number<0 or report_number>104:
     return jsonify("INVALID REPORT_NUMBER")
 
