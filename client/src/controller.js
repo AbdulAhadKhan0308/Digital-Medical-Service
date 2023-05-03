@@ -18,6 +18,9 @@ const heartHealthResult = document.querySelector(".heart-health__result");
 //ready search meds
 
 const renderHTML = function (element, data) {
+  //remove everything present before
+  element.innerHTML = "";
+
   let html = `<h3>Results</h3>
   <div>Something went wrong. Please try again.</div>`;
   if (
