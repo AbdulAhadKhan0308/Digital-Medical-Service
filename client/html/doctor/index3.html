@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<link rel="shortcut icon" type="image/png" href="/icon.png" />-->
+
+    <!--CSS is loaded synchronously-->
+
+    <title>medicapp</title>
+    <!--Load concurrently, execute only after HTML is parsed-->
+    <!--.js.map file is fetched by browser when it sees the comment line 
+    //# sourceMappingURL=script.js.map 
+    at the end of script after parsing it-->
+    <script defer src="script3.js"></script>
+  </head>
+  <body>
+    <!-- TOP NAV -->
+    <nav class="main-nav">
+      <a class="main-nav__entry" href="#feature--0">Welcome!</a>
+      <a class="main-nav__entry" href="#feature--1">Heart Health Predictor</a>
+      <a class="main-nav__entry" href="#feature--2">Logout</a>
+    </nav>
+    <br /><br />
+    <div class="welcome-medicapp" id="feature--0">
+      <h2 class="welcome-medicapp--title">Welcome!</h2>
+    </div>
+    <br /><br />
+    <div class="heart-health-medicapp" id="feature--1">
+      <h2>Predict your heart health using ECG analyzer</h2>
+      <p>
+        From among the set of example ECGs (in the form of data points
+        corresponding to a heartbeat) select and analyze the heart's condition.
+      </p>
+
+      <form class="heart-health__form">
+        <input
+          type="text"
+          placeholder="Enter report number"
+          class="heart-health__form__input"
+        />
+        <button class="heart-health__form__btn">Get Prediction</button>
+      </form>
+      <br />
+      <div class="heart-health__result">
+        <img class="heart-health__result__image" src="" alt="ECG picture" />
+        <br />
+        <div class="heart-health__result__describe"></div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="logout-medicapp" id="feature--2">
+      <h2 class="logout-medicapp--title">Logout</h2>
+      <p class="logout-medicapp--body">
+        Logout of your account by clicking below &rarr;
+      </p>
+      <button class="logout-medicapp--button">Logout</button>
+    </div>
+  </body>
+</html>

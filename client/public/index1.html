@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<link rel="shortcut icon" type="image/png" href="/icon.png" />-->
+
+    <!--CSS is loaded synchronously-->
+    <link rel="stylesheet" href="leaflet.css" />
+
+    <title>medicapp</title>
+    <!--Load concurrently, execute only after HTML is parsed-->
+    <!--.js.map file is fetched by browser when it sees the comment line 
+    //# sourceMappingURL=script.js.map 
+    at the end of script after parsing it-->
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- TOP NAV -->
+    <nav class="main-nav">
+      <a class="main-nav__entry" href="#feature--0">About</a>
+      <a class="main-nav__entry" href="#feature--1">Login</a>
+      <a class="main-nav__entry" href="#feature--2">New here? Signup!</a>
+    </nav>
+    <br /><br />
+    <div class="enter-medicapp">
+      <div class="login-div" id="feature--1">
+        <h2>Login here &rarr;</h2>
+        <form class="login__form">
+          <input
+            type="text"
+            placeholder="username"
+            class="login__form__input login__form__username"
+          />
+          <input
+            type="password"
+            placeholder="pass"
+            class="login__form__input login__form__pass"
+          />
+          <button class="login-medicapp__btn">Patient Login</button>
+          <button class="login-medicapp__btn">Doctor Login</button>
+        </form>
+      </div>
+      <div class="signup-div" id="feature--2">
+        <h2>Signup here &rarr;</h2>
+        <form class="signup__form">
+          <input
+            type="text"
+            placeholder="username"
+            class="signup__form__input signup__form__username"
+          />
+          <input
+            type="password"
+            placeholder="type pass"
+            class="signup__form__input signup__form__pass"
+          />
+          <input
+            type="password"
+            placeholder="confirm pass"
+            class="signup__form__input signup__form__pass"
+          />
+          <button class="signup-medicapp__btn">Patient Signup</button>
+          <button class="signup-medicapp__btn">Doctor Signup</button>
+        </form>
+      </div>
+    </div>
+    <br /><br />
+    <div class="about-medicapp" id="feature--0">
+      <div class="about-medicapp__main">
+        <p class="">
+          Medicine search, consultations, appointments and more, all through
+          this modern web application
+        </p>
+        <h4 class="about-medicapp__label">Learn More &darr;</h4>
+      </div>
+
+      <div class="about-medicapp__more-info">
+        <h2>Features</h2>
+        <section class="section" id="section--1">
+          <h3 class="section__header section--1__header">Search medicines</h3>
+          <p>
+            Choose from 700+ OTC and prescription drugs. Get to know their side
+            effects, prices, alternatives and more!
+          </p>
+        </section>
+        <section class="section" id="section--2">
+          <h3 class="section__header section--2__header">
+            Locate medical stores
+          </h3>
+          <p>
+            We find medical stores for you so that you get the choice making
+            your purchase easy, simple, and affordable!
+          </p>
+        </section>
+        <section class="section" id="section--3">
+          <h3 class="section__header section--3__header">
+            Heart Health Predictor
+          </h3>
+          <p>
+            A tool for doctors and patients to be used in machine-assisted
+            medical diagnosis. It enables significant knowledge, that is,
+            relationships between ECGs and heart disease to be established
+          </p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

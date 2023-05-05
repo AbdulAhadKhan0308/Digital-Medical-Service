@@ -141,3 +141,17 @@ export PATH=/c/"Program Files"/Python38/Scripts/:/c/"Program Files"/Python38/:$P
 --------------------------------------------------------------
 Example Url for wrong report_number repno=123
 http://127.0.0.1:5000/ecg/?repno=123
+
+------------------------------------------------------------
+old package.json script
+
+"filefolderchange": "rm -rf ../public && mkdir public && cp html/index1.html public/index1.html && cp -a css/. dist/ && cp node_modules/leaflet/dist/leaflet.css dist/leaflet.css",
+
+patient doc
+-------------------------------------------------------------
+(p1,pass1)
+
+{"username":"p1",
+"salt":"7834b4333e9920815a0b9206928c8597",
+"passhash":"60f316223d62d4f06ee08049e4a7ec2e7e80f3219a5ecebad55be3025ccad759"
+}

@@ -5,8 +5,11 @@
   "main": "dist/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run filefolderchange && webpack --config webpack.config.js",
-    "filefolderchange": "rm -rf dist && mkdir dist && cp html/index.html dist/index.html && cp -a css/. dist/ && cp node_modules/leaflet/dist/leaflet.css dist/leaflet.css"
+    "build": "npm run folderbuild && npm run htmlbuild && npm run cssbuild && npm run scriptbuild",
+    "folderbuild": "rm -rf ..\\public",
+    "htmlbuild": "cp -r html\\. ..\\public",
+    "cssbuild": " cp node_modules\\leaflet\\dist\\leaflet.css ..\\public\\patient && cp -r css\\patient\\images ..\\public\\patient",
+    "scriptbuild": "webpack --config webpack.config.js"
   },
   "author": "AbdulAhadKhan",
   "license": "GPL-3.0",

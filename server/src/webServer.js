@@ -4,7 +4,11 @@ const { medicineSearch } = require("./medicineSearch.js");
 const { illnessSearch } = require("./illnessSearch.js");
 const { medicineFuzzySearch } = require("./medicineFuzzySearch.js");
 const { illnessFuzzySearch } = require("./illnessFuzzySearch.js");
+const { login } = require("./login.js");
+const bodyParser = require("body-parser");
 const app = express();
+// create application/json parser
+const jsonParser = bodyParser.json();
 
 //3030 is for trojans and obsolete protocol, so can be used
 const port = process.env.PORT || 3030;
@@ -35,10 +39,10 @@ app.use((req, res, next) => {
 // first, html is sent from "/" path,
 // paths present in html generate new https requests
 // they are served from here
-app.use("/", express.static("../public"));
+app.use("/", express.static("../../public"));
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+  res.sendFile(path.join(__dirname, "..", "..", "public", "index1.html"));
 });
 
 //MongoDB Atlas cluster needs to be not paused
@@ -116,4 +120,31 @@ const server = app.listen(port2, hostname, function () {
   const host = server.address().address;
   const port = server.address().port;
   console.log("running at http://" + host + ":" + port);
+});
+
+//login
+app.post("/login", jsonParser, function (req, res) {
+  console.log("/login");
+
+  login(String(req.body.user), String(req.body.pass), String(req.body.type))
+    .then(() => {
+      console.log("SUCCESS");
+      res.write(JSON.stringify({ stat: "SUCCESS" }));
+      res.end();
+    })
+    .catch(() => {
+      console.log("FAILURE");
+      res.write(JSON.stringify({ stat: "FAILURE" }));
+      res.end();
+    });
+});
+
+//logout
+app.post("/logout", function (req, res) {
+  console.log("/logout");
+});
+
+//signup
+app.post("/signup", function (req, res) {
+  console.log("/signup");
 });

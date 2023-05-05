@@ -43,7 +43,7 @@ async function medicineSearch(query) {
   let cursor = await coll.aggregate(agg);
 
   await cursor.forEach((doc) => {
-    console.log(doc);
+    console.log(doc["Medicine Name"]);
     ansArray.push(doc);
   });
 

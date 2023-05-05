@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<link rel="shortcut icon" type="image/png" href="/icon.png" />-->
+
+    <!--CSS is loaded synchronously-->
+    <link rel="stylesheet" href="leaflet.css" />
+
+    <title>medicapp</title>
+    <!--Load concurrently, execute only after HTML is parsed-->
+    <!--.js.map file is fetched by browser when it sees the comment line 
+    //# sourceMappingURL=script.js.map 
+    at the end of script after parsing it-->
+    <script defer src="script2.js"></script>
+  </head>
+  <body>
+    <!-- TOP NAV -->
+    <nav class="main-nav">
+      <a class="main-nav__entry" href="#feature--0">Welcome!</a>
+      <a class="main-nav__entry" href="#feature--1">Search meds</a>
+      <a class="main-nav__entry" href="#feature--2">Locate medical stores</a>
+      <a class="main-nav__entry" href="#feature--3">Logout</a>
+    </nav>
+    <br /><br />
+    <div class="welcome-medicapp" id="feature--0">
+      <h2 class="welcome-medicapp--title">Welcome!</h2>
+    </div>
+    <br /><br />
+    <div class="search-medicapp" id="feature--1">
+      <h2>Search for prescription and OTC medicines</h2>
+      <p>Search for medicines by name or by symptoms name:</p>
+
+      <form class="search__form">
+        <input
+          type="text"
+          placeholder="Medicine/disease/symptom"
+          class="search__form__input"
+        /><br /><br />
+        <input type="checkbox" id="symptom" />
+        <label> Check this, if you want to search by disease/symptom</label
+        ><br />
+        <input type="checkbox" id="fuzzy" />
+        <label
+          >Check this, if you don't know the medicine/symptom name
+          assuredly</label
+        ><br /><br />
+        <button class="search__form__btn">Get Results</button>
+      </form>
+      <br />
+      <div class="search-medicapp__result"></div>
+    </div>
+    <br /><br />
+    <div class="geo-medicapp" id="feature--2">
+      <h2>Look for medical stores around you</h2>
+      <div id="map" style="width: 600px; height: 400px"></div>
+      <button class="geo-medicapp__btn">Find medical stores</button>
+    </div>
+    <br /><br />
+    <div class="logout-medicapp" id="feature--3">
+      <h2 class="logout-medicapp--title">Logout</h2>
+      <p class="logout-medicapp--body">
+        Logout of your account by clicking below &rarr;
+      </p>
+      <button class="logout-medicapp--button">Logout</button>
+    </div>
+  </body>
+</html>
