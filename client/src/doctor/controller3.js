@@ -7,6 +7,7 @@ const heartHealthResultImage = document.querySelector(
   ".heart-health__result__image"
 );
 const welcomeTitle = document.querySelector(".welcome-medicapp--title");
+const logoutBtn = document.querySelector(".logout-medicapp--button");
 //////////////////////////////////////////////////////////////
 
 //ready heart health predictor
@@ -62,6 +63,15 @@ heartHealthFormBtn.addEventListener("click", (e) => {
   } else {
     renderPrediction(0, heartHealthResult);
   }
+});
+
+//logout
+logoutBtn.addEventListener("click", () => {
+  console.log("logoutBtn");
+  localStorage.clear();
+  //we are at http-localhost/doctor/index3.html
+  //go to http-localhost/index.html
+  window.location = "./../index1.html";
 });
 /////////////////////////////////////////////////////
 

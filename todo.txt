@@ -6,7 +6,6 @@ MongoDB logged in to send receive query
 //TO DO:
 Python Env variable not recognized by VSCode
 //TO DO:
-//Welcome messages when loading index2.html and index3.html
 //Implement patient logout
 //Implement doctor logout
 

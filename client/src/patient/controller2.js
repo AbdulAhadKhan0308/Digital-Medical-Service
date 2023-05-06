@@ -6,6 +6,8 @@ const fuzzyCheckbox = document.querySelector("#fuzzy");
 const searchInput = document.querySelector(".search__form__input");
 const searchResultDiv = document.querySelector(".search-medicapp__result");
 const welcomeTitle = document.querySelector(".welcome-medicapp--title");
+const logoutBtn = document.querySelector(".logout-medicapp--button");
+
 ///////////////////////////////////////////////////
 
 //ready search meds
@@ -71,6 +73,15 @@ getSearchResultsBtn.addEventListener("click", (e) => {
 locateMedicalStoresBtn.addEventListener("click", () => {
   console.log("clicked locateMedicalStoresBtn");
   geolocate();
+});
+
+//logout
+logoutBtn.addEventListener("click", () => {
+  console.log("logoutBtn");
+  localStorage.clear();
+  //we are at http-localhost/patient/index2.html
+  //go to http-localhost/index.html
+  window.location = "./../index1.html";
 });
 //////////////////////////////////////////////////////
 
