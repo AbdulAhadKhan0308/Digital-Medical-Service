@@ -6,7 +6,7 @@ const heartHealthResult = document.querySelector(".heart-health__result");
 const heartHealthResultImage = document.querySelector(
   ".heart-health__result__image"
 );
-
+const welcomeTitle = document.querySelector(".welcome-medicapp--title");
 //////////////////////////////////////////////////////////////
 
 //ready heart health predictor
@@ -63,3 +63,15 @@ heartHealthFormBtn.addEventListener("click", (e) => {
     renderPrediction(0, heartHealthResult);
   }
 });
+/////////////////////////////////////////////////////
+
+// display username from localStorage
+window.onload = function () {
+  const username = localStorage.getItem("username");
+  const type = localStorage.getItem("type");
+
+  if (!!username && !!type && type === "1") {
+    //display title
+    welcomeTitle.innerHTML = `Welcome ${username}!`;
+  }
+};

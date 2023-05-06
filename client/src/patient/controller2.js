@@ -5,7 +5,7 @@ const symptomCheckbox = document.querySelector("#symptom");
 const fuzzyCheckbox = document.querySelector("#fuzzy");
 const searchInput = document.querySelector(".search__form__input");
 const searchResultDiv = document.querySelector(".search-medicapp__result");
-
+const welcomeTitle = document.querySelector(".welcome-medicapp--title");
 ///////////////////////////////////////////////////
 
 //ready search meds
@@ -72,3 +72,15 @@ locateMedicalStoresBtn.addEventListener("click", () => {
   console.log("clicked locateMedicalStoresBtn");
   geolocate();
 });
+//////////////////////////////////////////////////////
+
+// display username from localStorage
+window.onload = function () {
+  const username = localStorage.getItem("username");
+  const type = localStorage.getItem("type");
+
+  if (!!username && !!type && type === "0") {
+    //display title
+    welcomeTitle.innerHTML = `Welcome ${username}!`;
+  }
+};
