@@ -5,6 +5,7 @@ const { illnessSearch } = require("./illnessSearch.js");
 const { medicineFuzzySearch } = require("./medicineFuzzySearch.js");
 const { illnessFuzzySearch } = require("./illnessFuzzySearch.js");
 const { login } = require("./login.js");
+const { signup } = require("./signup.js");
 const bodyParser = require("body-parser");
 const app = express();
 // create application/json parser
@@ -139,12 +140,31 @@ app.post("/login", jsonParser, function (req, res) {
     });
 });
 
-//logout
-app.post("/logout", function (req, res) {
-  console.log("/logout");
-});
-
 //signup
-app.post("/signup", function (req, res) {
+app.post("/signup", jsonParser, function (req, res) {
   console.log("/signup");
+
+  console.log(req.body.user, ",", req.body.pass, ",", req.body.type);
+
+  signup(String(req.body.user), String(req.body.pass), String(req.body.type))
+    .then((message) => {
+      if (!!message && message == "REGISTERED") {
+        console.log("SUCCESS");
+        res.write(JSON.stringify({ stat: "SUCCESS" }));
+        res.end();
+      } else if (!!message && message == "NON UNIQUE") {
+        console.log("FAILURE, NON UNIQUE");
+        res.write(JSON.stringify({ stat: "FAILURE", message: "NON UNIQUE" }));
+        res.end();
+      } else {
+        console.log("FAILURE");
+        res.write(JSON.stringify({ stat: "FAILURE" }));
+        res.end();
+      }
+    })
+    .catch(() => {
+      console.log("FAILURE");
+      res.write(JSON.stringify({ stat: "FAILURE" }));
+      res.end();
+    });
 });

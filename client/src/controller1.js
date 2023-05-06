@@ -4,6 +4,16 @@ const loginUsernameInput = document.querySelector(".login__form__username");
 const loginPassInput = document.querySelector(".login__form__pass");
 const loginStatus = document.querySelector(".login-div__status");
 
+const signupPatientBtn = document.querySelector(
+  ".signup-medicapp__btn--patient"
+);
+const signupDoctorBtn = document.querySelector(".signup-medicapp__btn--doctor");
+const signupUsernameInput = document.querySelector(".signup__form__username");
+const signupPassInput = document.querySelector(".signup__form__pass");
+const signupConfirmPassInput = document.querySelector(
+  ".signup__form__confirm-pass"
+);
+const signupStatus = document.querySelector(".signup-div__status");
 ///////////////////////////////////////////////////////////////
 
 loginPerson = (type) => {
@@ -51,6 +61,63 @@ loginPerson = (type) => {
   }
 };
 
+const signupPerson = (type) => {
+  signupStatus.innerHTML = "";
+
+  const confirmPass = signupConfirmPassInput.value;
+  const signupCredentials = {
+    user: signupUsernameInput.value,
+    pass: signupPassInput.value,
+    type: type,
+  };
+  const url = "http://127.0.0.1/signup";
+  console.log(signupCredentials);
+
+  if (
+    !!signupCredentials.user &&
+    !!signupCredentials.pass &&
+    signupCredentials.user !== "" &&
+    signupCredentials.pass !== ""
+  ) {
+    if (signupCredentials.pass !== confirmPass) {
+      signupStatus.innerHTML = "Passwords do not match.";
+      return;
+    }
+    fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(signupCredentials),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!!data && !!data.stat && data.stat === "SUCCESS") {
+          console.log("SUCCESS");
+          //display info that user has been registered.
+          if (type === "0")
+            signupStatus.innerHTML = "Successfully registered as patient.";
+          else signupStatus.innerHTML = "Successfully registered as doctor.";
+        } else {
+          if (
+            !!data &&
+            !!data.stat &&
+            !!data.message &&
+            data.stat === "FAILURE" &&
+            data.message === "NON UNIQUE"
+          ) {
+            signupStatus.innerHTML = "Username not unique, try a new one.";
+          } else {
+            signupStatus.innerHTML = "Something went wrong. Please try again.";
+          }
+        }
+      })
+      .catch(() => {
+        loginStatus.innerHTML = "Something went wrong. Please try again.";
+      });
+  }
+};
+/////////////////////////////////////////////////////
 // login patient
 loginPatientBtn.addEventListener("click", (e) => {
   console.log("loginPatientBtn");
@@ -62,4 +129,18 @@ loginPatientBtn.addEventListener("click", (e) => {
 loginDoctorBtn.addEventListener("click", (e) => {
   e.preventDefault();
   loginPerson("1");
+});
+
+//signup patient
+signupPatientBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("signupPatientBtn");
+  signupPerson("0");
+});
+
+//signup doctor
+signupDoctorBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("signupDoctorBtn");
+  signupPerson("1");
 });
