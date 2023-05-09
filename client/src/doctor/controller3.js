@@ -29,7 +29,9 @@ const renderPrediction = function (stat, element, data) {
     const arrData = data.split(":");
     const arrPredictions = arrData[2].slice(1, -1).split(" ");
     // console.log(arrPredictions);
-    const html = `<div>Predicted Condition: ${arrConditions[+arrData[0]]}</div>
+    const html = `<h3>Prediction Result</h3><div>Predicted Condition: ${
+      arrConditions[+arrData[0]]
+    }</div>
           <div>Actual Condition: ${arrConditions[+arrData[1]]}</div>
           <div><strong>Predicted Probabilities:</strong></div>
           <div>Normal Beat: ${arrPredictions[0]}</div>

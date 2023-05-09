@@ -8,7 +8,7 @@
 
     <!--CSS is loaded synchronously-->
     <link rel="stylesheet" href="leaflet.css" />
-
+    <link rel="stylesheet" href="a2.css" />
     <title>medicapp</title>
     <!--Load concurrently, execute only after HTML is parsed-->
     <!--.js.map file is fetched by browser when it sees the comment line 
@@ -19,6 +19,7 @@
   <body>
     <!-- TOP NAV -->
     <nav class="main-nav">
+      <a class="main-nav__entry main-nav__entry--title">MEDICAPP</a>
       <a class="main-nav__entry" href="#feature--0">Welcome!</a>
       <a class="main-nav__entry" href="#feature--1">Search meds</a>
       <a class="main-nav__entry" href="#feature--2">Locate medical stores</a>
@@ -31,26 +32,28 @@
     <br /><br />
     <div class="search-medicapp" id="feature--1">
       <h2>Search for prescription and OTC medicines</h2>
-      <p>Search for medicines by name or by symptoms name:</p>
-
-      <form class="search__form">
-        <input
-          type="text"
-          placeholder="Medicine/disease/symptom"
-          class="search__form__input"
-        /><br /><br />
-        <input type="checkbox" id="symptom" />
-        <label> Check this, if you want to search by disease/symptom</label
-        ><br />
-        <input type="checkbox" id="fuzzy" />
-        <label
-          >Check this, if you don't know the medicine/symptom name
-          assuredly</label
-        ><br /><br />
-        <button class="search__form__btn">Get Results</button>
-      </form>
-      <br />
-      <div class="search-medicapp__result"></div>
+      <div class="search-div">
+        <form class="search__form">
+          <label>Search for medicines by name or by symptoms name &rarr;</label>
+          <input
+            type="text"
+            placeholder="Medicine/disease/symptom"
+            class="search__form__input"
+          /><br />
+          <input class="search__form__checkbox" type="checkbox" id="symptom" />
+          <label class="search__form__label">
+            Check this, if you want to search by disease/symptom</label
+          ><br />
+          <input class="search__form__checkbox" type="checkbox" id="fuzzy" />
+          <label class="search__form__label"
+            >Check this, if you don't know the medicine/symptom name
+            assuredly</label
+          ><br />
+          <button class="search__form__btn">Get Results</button>
+        </form>
+        <br />
+        <div class="search-medicapp__result"></div>
+      </div>
     </div>
     <br /><br />
     <div class="geo-medicapp" id="feature--2">

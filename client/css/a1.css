@@ -1,0 +1,258 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* Top Nav */
+.main-nav {
+  background-color: #0077cc;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px 20px;
+}
+
+.main-nav__entry {
+  margin-left: 20px;
+}
+
+.main-nav__entry:first-child {
+  margin-left: 0;
+  margin-right: auto;
+
+  font-weight: bold;
+  font-size: 24px;
+
+  text-decoration: none;
+}
+
+/* Login and Signup Forms */
+.enter-medicapp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login-div,
+.signup-div {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0 20px 20px;
+  padding: 20px;
+  width: 350px;
+}
+
+.login-div h2,
+.signup-div h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login__form input,
+.signup__form input {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.login__form__input.login__form__username {
+  margin-bottom: 20px;
+}
+
+.login__form__input.login__form__pass {
+  margin-bottom: 10px;
+}
+
+.signup__form__input.signup__form__username {
+  margin-bottom: 10px;
+}
+
+.signup__form__input.signup__form__pass {
+  margin-bottom: 10px;
+}
+
+.signup__form__input.signup__form__confirm-pass {
+  margin-bottom: 20px;
+}
+
+.login-medicapp__btn,
+.signup-medicapp__btn {
+  background-color: #0077cc;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.login-medicapp__btn:hover,
+.signup-medicapp__btn:hover {
+  background-color: #005fa3;
+}
+
+.login-medicapp__btn--patient,
+.signup-medicapp__btn--patient {
+  background-color: #5cb85c;
+}
+
+.login-medicapp__btn--patient:hover,
+.signup-medicapp__btn--patient:hover {
+  background-color: #449d44;
+}
+
+/* --- About Medicapp Section --- */
+
+.about-medicapp {
+  background-color: #f2f2f2;
+  padding: 80px 0;
+}
+
+.about-medicapp__main {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-medicapp__label {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.about-medicapp__more-info {
+  margin-top: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  margin-top: 80px;
+}
+
+.section__header {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.section--1__header {
+  color: #4caf50;
+}
+
+.section--2__header {
+  color: #2196f3;
+}
+
+.section--3__header {
+  color: #9c27b0;
+}
+
+/* --- Login and Signup forms --- */
+/* Login and Signup forms */
+.login-form,
+.signup-form {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h2,
+.signup-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-form input,
+.signup-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-form button,
+.signup-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #008cba;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+  background-color: #005f6b;
+}
+
+.login-form p,
+.signup-form p {
+  text-align: center;
+}

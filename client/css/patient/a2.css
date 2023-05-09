@@ -1,0 +1,161 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+/* Top nav styles */
+.main-nav {
+  background-color: #0077cc;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 25px 20px;
+}
+
+.main-nav__entry {
+  margin-left: 20px;
+}
+
+.main-nav__entry:first-child {
+  margin-left: 0;
+  margin-right: auto;
+
+  font-weight: bold;
+  font-size: 24px;
+
+  text-decoration: none;
+}
+
+.welcome-medicapp,
+.search-medicapp,
+.geo-medicapp,
+.logout-medicapp {
+  margin-bottom: 80px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
+}
+
+/*Default buttons*/
+button {
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+button:hover {
+  background-color: #449d44;
+}
+
+/* Welcome section styles*/
+/* Search section styles */
+
+.search-div {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search__form__input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.search__form__checkbox {
+  margin-right: 5px;
+}
+
+.search__form__label {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.search__form__btn {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.search-medicapp__result {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #5cb85c;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+/* Geo section styles */
+
+/* Logout section styles */
+
+.logout-medicapp--body {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

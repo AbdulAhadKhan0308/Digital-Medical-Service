@@ -6,8 +6,11 @@ MongoDB logged in to send receive query
 //TO DO:
 Python Env variable not recognized by VSCode
 //TO DO:
-//Implement patient logout
-//Implement doctor logout
+//image of ecg displays on doctor page when ecg prediction button is pressed.
+//TO DO:
+//HTML changes
+//index2.html (changes have been made)
+//index3.html (changes have been made)
 
 there are no useful npms to upload csv files to mongodb atlas
 so needed to install the tools separately for windows, cd to the bin folder containing the mongoimport binary, (no PATH env. variable changes have been done), and run from there this command:

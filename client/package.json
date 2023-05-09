@@ -8,7 +8,7 @@
     "build": "npm run folderbuild && npm run htmlbuild && npm run cssbuild && npm run scriptbuild",
     "folderbuild": "rm -rf ..\\public",
     "htmlbuild": "cp -r html\\. ..\\public",
-    "cssbuild": " cp node_modules\\leaflet\\dist\\leaflet.css ..\\public\\patient && cp -r css\\patient\\images ..\\public\\patient",
+    "cssbuild": " cp node_modules\\leaflet\\dist\\leaflet.css ..\\public\\patient && cp -r css\\patient\\images ..\\public\\patient && cp -r css\\patient css\\doctor css\\a1.css ..\\public",
     "scriptbuild": "webpack --config webpack.config.js"
   },
   "author": "AbdulAhadKhan",
